@@ -83,7 +83,7 @@ bool FuStDetector::LoadModel(const std::string & model_path) {
 
         for (int32_t k = 0; is_loaded && k < num_stage; k++) {
           model_file.read(reinterpret_cast<char*>(&type_id), sizeof(int32_t));
-            std::cout<<"type_id:"<<type_id<<std::endl;
+           // std::cout<<"type_id:"<<type_id<<std::endl;
           classifier_type = static_cast<seeta::fd::ClassifierType>(type_id);
           reader = CreateModelReader(classifier_type);
           classifier = CreateClassifier(classifier_type);
